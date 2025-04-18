@@ -8,7 +8,7 @@ class db
 public:	
 	db() = default;
 	void db_add(int key, const std::string& author);
-	void db_find(int key);
+	int db_find(const std::string& author);
 	void db_update(int key, const std::string& author);
 	~db() = default;
 };

@@ -16,8 +16,10 @@ void bibfind_system::bibentry(action ac)
 	}
 }
 
-void bibfind_system::bibkey()
+int bibfind_system::bibkey(const std::string& author)
 {
+	auto v = data_base.db_find(author);
+	return v;
 }
 
 void bibfind_system::bibfind()

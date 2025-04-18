@@ -6,7 +6,7 @@
 #include <iostream>
 #include "db.h"
 struct bibfind_entry
-{
+{	
 	std::string author;
 	int key;
 };
@@ -18,7 +18,7 @@ public:
 	enum action {create, modify};
 	bibfind_system() = default;	
 	void bibentry(action ac);
-	void bibkey();
+	int bibkey(const std::string& author);
 	void bibfind();
 	void bibupdate();
 	~bibfind_system() = default;

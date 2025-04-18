@@ -6,9 +6,16 @@ void db::db_add(int key, const std::string& author)
 	storage.insert(p);
 }
 
-void db::db_find(int key)
+int db::db_find(const std::string& author)
 {
-
+	auto iter = storage.cbegin();
+	while (iter != storage.cend())
+	{
+		if (iter->second == author)
+			return iter->first;
+		iter++;
+	}
+	return -1;
 }
 
 void db::db_update(int key, const std::string& author)
