@@ -3,6 +3,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string>
+#include <iostream>
+#include "db.h"
 struct bibfind_entry
 {
 	std::string author;
@@ -10,10 +12,12 @@ struct bibfind_entry
 };
 class bibfind_system
 {
-	enum action {create, modify};
+	static int key_counter;
+	db data_base;
 public:
+	enum action {create, modify};
 	bibfind_system() = default;	
-	void bibentry();
+	void bibentry(action ac);
 	void bibkey();
 	void bibfind();
 	void bibupdate();
